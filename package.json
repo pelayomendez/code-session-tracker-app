@@ -1,0 +1,28 @@
+{
+  "name": "code-session-tracker-app",
+  "version": "1.0.0",
+  "description": "React code sessions tracking app",
+  "scripts": {
+    "start": "react-scripts start"
+  },
+  "dependencies": {
+    "antd": "^4.16.13",
+    "lokijs": "^1.5.12",
+    "moment": "^2.29.4",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "^5.0.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
