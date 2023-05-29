@@ -3,15 +3,18 @@
   "version": "1.0.0",
   "description": "React code sessions tracking app",
   "scripts": {
-    "start": "react-scripts start"
+    "start": "react-scripts start",
+    "build": "esbuild src/index.js --bundle --outfile=dist/index.js --loader:.html=text --loader:.js=jsx --define:process.env.NODE_ENV='\"production\"'",
+    "vercel-build": "npm run build && cp vercel.json dist && cp public/index.html dist",
+    "predeploy": "npm run vercel-build",
+    "deploy": "vercel --prod"
   },
   "dependencies": {
     "antd": "^4.16.13",
     "lokijs": "^1.5.12",
     "moment": "^2.29.4",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-scripts": "^5.0.0"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "browserslist": {
     "production": [
@@ -24,5 +27,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/preset-react": "^7.22.3",
+    "esbuild": "^0.17.19",
+    "esbuild-plugin-babel": "^0.2.3",
+    "react-scripts": "^5.0.1"
   }
 }

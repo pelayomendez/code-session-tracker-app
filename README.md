@@ -4,6 +4,10 @@ CodeSession Tracker is a React time tracking app that allows you to track differ
 
 This project was developed in collaboration with OpenAI's ChatGPT, an AI language model, and Pelayo Méndez.
 
+## Demo
+
+https://code-session-tracker.vercel.app/
+
 ## Features
 
 - Start and stop time-tracked segments with descriptions.
@@ -32,7 +36,7 @@ During the development of CodeSession Tracker, the following steps were taken in
 
 To run CodeSession Tracker locally, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/your-username/code-session-tracker.git`
+1. Clone the repository: `git clone https://github.com/pelayomendez/code-session-tracker.git`
 2. Navigate to the project directory: `cd code-session-tracker`
 3. Install the dependencies: `npm install`
 4. Start the development server: `npm start`
@@ -44,7 +48,7 @@ CodeSession Tracker is an open-source project, and contributions are welcome. If
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE.md) file for details.
 
 ## Author
 

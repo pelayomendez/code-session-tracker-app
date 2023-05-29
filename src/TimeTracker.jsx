@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import Loki from 'lokijs';
-import { Button, Input, List } from 'antd';
-import 'antd/dist/antd.css';
+import { Button, Input } from 'antd';
 
 import TrackedTimes from './TrackedTimes';
 import Footer from './Footer';
 
 const db = new Loki('timeTrackerDB');
+
 
 const TimeTracker = () => {
   const [description, setDescription] = useState('');
