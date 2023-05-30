@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Loki from 'lokijs';
 import { Button, Input } from 'antd';
+import moment from 'moment';
 
 import TrackedTimes from './TrackedTimes';
 import Footer from './Footer';
@@ -132,6 +133,23 @@ const TimeTracker = () => {
     db.saveDatabase();
   };
 
+  const handleSave = (editedRecord) => {
+    const { startTime, endTime } = editedRecord;
+  
+    // Recalculate the duration based on the updated start and end time
+    const duration = moment(endTime).diff(moment(startTime));
+    editedRecord.duration = duration;
+
+    // Update the `trackedTimes` state with the modified record
+    setTrackedTimes(trackedTimes.map(record => record["$loki"] === editedRecord["$loki"] ? editedRecord : record));
+
+
+    // Update the record in the LokiJS database
+    const collection = db.getCollection('times');
+    collection.update(editedRecord);
+    db.saveDatabase();
+  }
+
   return (
     <div style={{ margin: '20px' }}>
       <h1>CodeSession Tracker</h1>
@@ -161,7 +179,7 @@ const TimeTracker = () => {
       </div>
 
       <div style={{ marginTop: '20px' }}>
-        <TrackedTimes trackedTimes={trackedTimes} onDelete={handleDelete} />
+        <TrackedTimes trackedTimes={trackedTimes} onDelete={handleDelete} onSave={handleSave} />
       </div>
       <div style={{ marginTop: '20px' }}>
         <Footer />

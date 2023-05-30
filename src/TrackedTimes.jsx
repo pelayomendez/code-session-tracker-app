@@ -4,7 +4,7 @@ import moment from 'moment';
 
 import TrackedTimesList from './TrackedTimesList';
 
-const TrackedTimes = ({ trackedTimes, onDelete }) => {
+const TrackedTimes = ({ trackedTimes, onDelete, onSave }) => {
   const [selectedDate, setSelectedDate] = useState(moment());
 
   return (
@@ -19,6 +19,7 @@ const TrackedTimes = ({ trackedTimes, onDelete }) => {
           moment(time.startTime).isSame(selectedDate, 'day')
         )}
         onDelete={onDelete}
+        onSave={onSave}
       />
     </div>
   );
