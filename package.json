@@ -3,16 +3,13 @@
   "version": "1.0.0",
   "description": "React code sessions tracking app",
   "scripts": {
+    "prepare": "husky install && npx husky add .husky/pre-commit 'npm run pre-commit'",
     "start": "react-scripts start",
     "build": "esbuild src/index.js --bundle --outfile=dist/index.js --loader:.html=text --loader:.js=jsx --define:process.env.NODE_ENV='\"production\"'",
     "vercel-build": "npm run build && cp vercel.json dist && cp public/index.html dist",
     "predeploy": "npm run vercel-build",
-    "deploy": "vercel --prod"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "node scripts/code_review.js"
-    }
+    "deploy": "vercel --prod",
+    "pre-commit": "node scripts/code_review.js"
   },
   "dependencies": {
     "antd": "^4.16.13",

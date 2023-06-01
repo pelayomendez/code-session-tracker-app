@@ -16,7 +16,7 @@ async function sendMessage(message) {
       'Authorization': `Bearer ${API_KEY}`
     },
     body: JSON.stringify({
-      messages: [{ role: 'user', content: 'You: ' + message }],
+      messages: [{ role: 'system', content: 'You: ' + message }],
       model: 'gpt-3.5-turbo'
     }),
   });
@@ -69,4 +69,4 @@ function fetchFileContents(file) {
 }
 
 // Run the pre-commit hook
-preCommitHook();
+API_KEY ? preCommitHook() : console.log("Automatic review skipped. ChatGPT API KEY not found.");
