@@ -14,6 +14,7 @@ const TimeTracker = () => {
   const [startTime, setStartTime] = useState(null);
   const [elapsedTime, setElapsedTime] = useState(0);
   const [previousDescriptions, setPreviousDescriptions] = useState([]);
+  const [selectedDate, setSelectedDate] = useState(moment());
 
   useEffect(() => {
     // Extract unique descriptions from trackedTimes
@@ -37,7 +38,8 @@ const TimeTracker = () => {
   }, [startTime]);
 
   const startTracking = () => {
-    setStartTime(new Date());
+    const startTime = moment(selectedDate).startOf('day').toDate();
+    setStartTime(startTime);
     setElapsedTime(0);
   };
 
@@ -50,7 +52,7 @@ const TimeTracker = () => {
 
   const stopTracking = () => {
     if (startTime) {
-      const endTime = new Date();
+      const endTime = moment(selectedDate).endOf('day').toDate();
       const duration = endTime - startTime;
 
       const newTime = {
@@ -84,6 +86,9 @@ const TimeTracker = () => {
     setDescription(value);
   };
 
+  const handleDateChange = (date) => {
+    setSelectedDate(date);
+  };
 
   return (
     <div style={{ margin: '20px' }}>
@@ -94,8 +99,8 @@ const TimeTracker = () => {
           onChange={(value) => setDescription(value)}
           onSelect={(value) => setDescription(value)}
           style={{ width: 400 }}
-          options={trackedTimes.map((time) => ({
-            value: time.description,
+          options={Array.from(new Set(trackedTimes.map((time) => time.description))).map((description) => ({
+            value: description,
           }))}
           allowClear
           disabled={startTime !== null}
@@ -121,7 +126,13 @@ const TimeTracker = () => {
       </div>
 
       <div style={{ marginTop: '20px' }}>
-        <TrackedTimes trackedTimes={trackedTimes} onDelete={deleteTrackedTime} onSave={handleSave} />
+        <TrackedTimes 
+        trackedTimes={trackedTimes} 
+        onDelete={deleteTrackedTime} 
+        onSave={handleSave} 
+        selectedDate={selectedDate}
+        onDateChange={handleDateChange}
+        />
       </div>
       <div style={{ marginTop: '20px' }}>
         <Footer />

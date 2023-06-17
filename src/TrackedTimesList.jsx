@@ -56,7 +56,7 @@ const TrackedTimesList = ({ trackedTimes, onSave, onDelete }) => {
             onChange={(date) => setEditedRecord({ ...editedRecord, startTime: date })}
           />
         ) : (
-          moment(text).format('DD-MM-YYYY HH:mm:ss')
+          moment(text).format('HH:mm:ss')
         ),
     },
     {
@@ -71,7 +71,7 @@ const TrackedTimesList = ({ trackedTimes, onSave, onDelete }) => {
             onChange={(date) => setEditedRecord({ ...editedRecord, endTime: date })}
           />
         ) : (
-          moment(text).format('DD-MM-YYYY HH:mm:ss')
+          moment(text).format('HH:mm:ss')
         ),
     },
     {
