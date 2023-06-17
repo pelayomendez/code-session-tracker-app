@@ -205,4 +205,24 @@ body {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-  
+/* Logo */
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.logo-svg {
+  width: 50px;
+  height: 50px;
+}
+
+.logo-text {
+  margin-left: 10px;
+  margin-top: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #a8a8a8;
+  white-space: nowrap;
+}
