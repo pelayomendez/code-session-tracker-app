@@ -1,0 +1,172 @@
+/* styles.css */
+
+/* Global styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* TimeTracker component */
+  .time-tracker {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .time-tracker .title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .time-tracker .description-input {
+    width: 400px;
+    margin-bottom: 10px;
+  }
+  
+  .time-tracker .action-buttons {
+    margin-top: 20px;
+  }
+  
+  .time-tracker .elapsed-time {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .time-tracker .tracked-time-item {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .time-tracker .tracked-time-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+  
+  .time-tracker .tracked-time-item .time-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .time-tracker .tracked-time-item .time-details p {
+    margin: 0;
+  }
+  
+  .time-tracker .tracked-time-item .delete-button {
+    margin-left: 10px;
+  }
+  
+  /* Footer component */
+  .footer {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    color: #777;
+  }
+  
+  .footer p {
+    margin: 0;
+  }
+  
+  .footer a {
+    color: #777;
+    text-decoration: none;
+  }
+  
+  .footer a:hover {
+    color: #333;
+  }
+  
+  /* TrackedTimesList component */
+  .tracked-times-list {
+    margin-top: 20px;
+  }
+  
+  .tracked-times-list .list-header {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .tracked-times-list .no-times-message {
+    color: #777;
+  }
+  
+  /* DatePicker component */
+  .date-picker {
+    margin-bottom: 20px;
+  }
+  
+  /* Antd Button styles */
+  .ant-btn-primary {
+    background-color: #1890ff;
+    color: #fff;
+    border-color: #1890ff;
+  }
+  
+  .ant-btn-primary:hover,
+  .ant-btn-primary:focus {
+    background-color: #40a9ff;
+    border-color: #40a9ff;
+  }
+  
+  .ant-btn-danger {
+    background-color: #ff4d4f;
+    color: #fff;
+    border-color: #ff4d4f;
+  }
+  
+  .ant-btn-danger:hover,
+  .ant-btn-danger:focus {
+    background-color: #ff7875;
+    border-color: #ff7875;
+  }
+  
+  .ant-btn-link {
+    color: #1890ff;
+  }
+  
+  .ant-btn-link:hover,
+  .ant-btn-link:focus {
+    color: #40a9ff;
+  }
+  
+  /* Antd Input styles */
+  .ant-input-search {
+    width: 100%;
+  }
+  
+  /* Antd AutoComplete styles */
+  .ant-complete {
+    width: 100%;
+  }
+  
+  /* Antd List styles */
+  .ant-list {
+    margin-top: 10px;
+  }
+  
+  /* Antd Table styles */
+  .ant-table {
+    margin-top: 10px;
+  }
+  
+  /* Antd Pagination styles */
+  .ant-pagination {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  
